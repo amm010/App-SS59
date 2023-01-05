@@ -229,7 +229,7 @@
           </li>
           <li class="nav-item">
             <a href="../widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-table"></i>
               <p>
                 Data Barang
               </p>
@@ -237,7 +237,7 @@
           </li>
           <li class="nav-item">
             <a href="../widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-folder"></i>
               <p>
                 Data Merk
               </p>
@@ -245,7 +245,7 @@
           </li>
           <li class="nav-item">
             <a href="../widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-database"></i>
               <p>
                 Data Kategori
               </p>
