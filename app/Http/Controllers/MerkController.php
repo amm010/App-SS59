@@ -13,7 +13,7 @@ class MerkController extends Controller
      */
     public function index()
     {
-        //
+        return view('merk.index');
     }
 
     /**
