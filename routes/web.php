@@ -27,5 +27,6 @@ Route::middleware('auth')->group(function(){
     //manajemen merk
     Route::get('/Merk', [MerkController::class, 'index']);
     Route::get('/Merk/form', [MerkController::class, 'create']);
+    Route::post('/Merk', [MerkController::class, 'store']);
 });
     

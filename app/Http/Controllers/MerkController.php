@@ -37,7 +37,12 @@ class MerkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Merk = new Merk;
+        $Merk->kode = $request->kode;
+        $Merk->nm_merk = $request->merk;
+        $Merk->save();
+
+        return redirect('/Merk');
     }
 
     /**

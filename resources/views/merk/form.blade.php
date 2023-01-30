@@ -10,7 +10,7 @@
             <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Data Merk</li>
+                <li class="breadcrumb-item"><a href="-">Data Merk</a></li>
                 <li class="breadcrumb-item active">Tambah Data Merk</li>
             </ol>
             </div>
@@ -35,7 +35,20 @@
                 </button>
                 </div>
             </div>
-        
+        <div class="card-body">
+            <form method="POST" action="/Merk">
+                @csrf
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Kode</label>
+                  <input type="text" name="kode" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Merk</label>
+                    <input type="text" name="merk" class="form-control" id="exampleInputEmail1">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Tambah Data</button>
+              </form>
+        </div>
 
     </section>
 @endsection

@@ -40,7 +40,7 @@
             <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">No</th>
                     <th scope="col">Kode</th>
                     <th scope="col">Merk</th>
                     <th scope="col">Action</th>
@@ -49,9 +49,9 @@
                 <tbody>
                     @foreach ($Merk as $item)
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
+                        <th scope="row">{{ $nomor++ }}</th>
+                        <td>{{ $item->kode }}</td>
+                        <td>{{ $item->nm_merk }}</td>
                         <td>
                             <a href="#" class="btn btn-sm btn-info">Edit</a>
                             <a href="#" class="btn btn-sm btn-danger">Hapus</a>
