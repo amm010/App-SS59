@@ -26,5 +26,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware('auth')->group(function(){
     //manajemen merk
     Route::get('/Merk', [MerkController::class, 'index']);
+    Route::get('/Merk/form', [MerkController::class, 'create']);
 });
     

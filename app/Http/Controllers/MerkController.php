@@ -14,7 +14,9 @@ class MerkController extends Controller
      */
     public function index()
     {
-        return view('merk.index');
+        $nomor = 1;
+        $Merk = Merk::all();
+        return view('merk.index', compact('nomor','Merk'));
     }
 
     /**
@@ -24,7 +26,7 @@ class MerkController extends Controller
      */
     public function create()
     {
-        //
+        return view('merk.form');
     }
 
     /**
