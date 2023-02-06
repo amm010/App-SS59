@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MerkController;
+use App\Http\Controllers\DataBarangController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,5 +32,13 @@ Route::middleware('auth')->group(function(){
     Route::get('/Merk/edit/{id}', [MerkController::class, 'edit']);
     Route::put('/Merk/{id}', [MerkController::class, 'update']);
     Route::delete('/Merk/{id}', [MerkController::class, 'destroy']);
+
+    //manajemen data barang
+    Route::get('/DataBarang', [DataBarangController::class, 'index']);
+    Route::get('/DataBarang/form', [DataBarangController::class, 'create']);
+    Route::post('/DataBarang', [DataBarangController::class, 'store']);
+    Route::get('/DataBarang/edit/{id}', [DataBarangController::class, 'edit']);
+    Route::put('/DataBarang/{id}', [DataBarangController::class, 'update']);
+    Route::delete('/DataBarang/{id}', [DataBarangController::class, 'destroy']);
 });
     

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Barang;
 
 class DataBarangController extends Controller
 {
@@ -13,7 +14,9 @@ class DataBarangController extends Controller
      */
     public function index()
     {
-        //
+        $nomor = 1;
+        $brg = Barang::all();
+        return view('DataBarang.index', compact('nomor','brg'));
     }
 
     /**
