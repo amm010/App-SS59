@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Barang;
+use App\Models\Merk;
 
 class DataBarangController extends Controller
 {
@@ -26,7 +27,8 @@ class DataBarangController extends Controller
      */
     public function create()
     {
-        //
+        $Merk = Merk::all();
+        return view('DataBarang.form', compact('Merk'));
     }
 
     /**
@@ -37,7 +39,17 @@ class DataBarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $brg = new Barang;
+
+        $brg->kode = $request->kode;
+        $brg->nm_barang = $request->nama_brg;
+        $brg->harga = $request->harga;
+        $brg->merks_id = $request->merk;
+        $brg->kategoris_id = "1";
+        $brg->foto = "default.jpg";
+        $brg->save();
+
+        return redirect('/DataBarang');
     }
 
     /**
