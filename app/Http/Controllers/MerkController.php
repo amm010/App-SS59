@@ -64,7 +64,8 @@ class MerkController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Merk = Merk::find($id);
+        return view('merk.edit', compact('Merk'));
     }
 
     /**
@@ -76,7 +77,12 @@ class MerkController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Merk = Merk::find($id);
+        $Merk->kode = $request->kode;
+        $Merk->nm_merk = $request->merk;
+        $Merk->save();
+
+        return redirect('/Merk');
     }
 
     /**

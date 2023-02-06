@@ -53,7 +53,7 @@
                         <td>{{ $item->kode }}</td>
                         <td>{{ $item->nm_merk }}</td>
                         <td>
-                            <a href="#" class="btn btn-sm btn-info">Edit</a>
+                            <a href="/Merk/edit/{{$item->id}}" class="btn btn-sm btn-info">Edit</a>
                             <a href="#" class="btn btn-sm btn-danger">Hapus</a>
                         </td>
                       </tr>

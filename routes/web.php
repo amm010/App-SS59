@@ -28,5 +28,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/Merk', [MerkController::class, 'index']);
     Route::get('/Merk/form', [MerkController::class, 'create']);
     Route::post('/Merk', [MerkController::class, 'store']);
+    Route::get('/Merk/edit/{id}', [MerkController::class, 'edit']);
+    Route::put('/Merk/{id}', [MerkController::class, 'update']);
 });
     
