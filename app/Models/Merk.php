@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Merk extends Model
 {
-    use HasFactory;
+    public function barang(){
+        return $this->belongsTo(Barang::class);
+    }
+
 }

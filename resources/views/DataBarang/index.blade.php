@@ -56,7 +56,7 @@
                         <td>{{ $item->kode }}</td>
                         <td>{{ $item->nm_barang }}</td>
                         <td>{{ $item->harga }}</td>
-                        <td>{{ $item->merks_id }}</td>
+                        <td>{{ $item->merks->nm_merk}}</td>
                         <td>{{ $item->kategoris_id }}</td>
                         <td>
                             <a href="/Merk/edit/{{$item->id}}" class="btn btn-sm btn-info">Edit</a>
