@@ -93,6 +93,9 @@ class MerkController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $Merk = Merk::find($id);
+        $Merk->delete();
+
+        return redirect('/Merk');
     }
 }
