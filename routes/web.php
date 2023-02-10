@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MerkController;
 use App\Http\Controllers\DataBarangController;
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,5 +41,13 @@ Route::middleware('auth')->group(function(){
     Route::get('/DataBarang/edit/{id}', [DataBarangController::class, 'edit']);
     Route::put('/DataBarang/{id}', [DataBarangController::class, 'update']);
     Route::delete('/DataBarang/{id}', [DataBarangController::class, 'destroy']);
+
+    //manajemen kategori
+    Route::get('/Kategori', [KategoriController::class, 'index']);
+    Route::get('/Kategori/form', [KategoriController::class, 'create']);
+    Route::post('/Kategori', [KategoriController::class, 'store']);
+    Route::get('/Kategori/edit/{id}', [KategoriController::class, 'edit']);
+    Route::put('/Kategori/{id}', [KategoriController::class, 'update']);
+    Route::delete('/Kategori/{id}', [KategoriController::class, 'destroy']);
 });
     

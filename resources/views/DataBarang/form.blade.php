@@ -61,7 +61,12 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Kategori</label>
-                    <input type="text" name="kategori" class="form-control" id="exampleInputEmail1">
+                    <select name="kategori" class="form-control" id="">
+                        <option value="">--Pilih Kategori--</option>
+                        @foreach ($Kategori as $ktg)
+                            <option value="{{ $ktg->id }}">{{ $ktg->kode }} - {{ $ktg->nm_kategori }}</option>
+                        @endforeach
+                    </select>
                 </div>
                   <button type="submit" class="btn btn-primary">Tambah Data</button>
               </form>

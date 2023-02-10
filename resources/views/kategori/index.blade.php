@@ -1,16 +1,16 @@
 @extends('layouts.master')
-@section('judul'.'Data Barang ')
+@section('judul'.'Data Kategori')
 @section('content-header')
     <section class="content-header">
         <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-            <h1>Data Barang</h1>
+            <h1>Data Kategori</h1>
             </div>
             <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Data Barang</li>
+                <li class="breadcrumb-item active">Data Kategori</li>
             </ol>
             </div>
         </div>
@@ -25,7 +25,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <a href="/DataBarang/form" class="btn btn-primary">Tambah Data</a>
+                <a href="/Kategori/form" class="btn btn-primary">Tambah Data</a>
 
                 <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -42,24 +42,18 @@
                   <tr>
                     <th scope="col">No</th>
                     <th scope="col">Kode</th>
-                    <th scope="col">Nama Barang</th>
-                    <th scope="col">Harga</th>
-                    <th scope="col">Merk</th>
                     <th scope="col">Kategori</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($brg as $item)
+                    @foreach ($Kategori as $item)
                     <tr>
                         <th scope="row">{{ $nomor++ }}</th>
                         <td>{{ $item->kode }}</td>
-                        <td>{{ $item->nm_barang }}</td>
-                        <td>{{ $item->harga }}</td>
-                        <td>{{ $item->merks->nm_merk}}</td>
-                        <td>{{ $item->kategoris->nm_kategori }}</td>
+                        <td>{{ $item->nm_kategori }}</td>
                         <td>
-                            <a href="/Merk/edit/{{$item->id}}" class="btn btn-sm btn-info">Edit</a>
+                            <a href="/Kategori/edit/{{$item->id}}" class="btn btn-sm btn-info">Edit</a>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal{{ $item->id }}">
                                 Hapus
@@ -73,11 +67,11 @@
                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Peringatan</h1>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Yakin data merk {{ $item->nm_merk }} ingin dihapus?</p>
+                                        <p>Yakin data kategori {{ $item->nm_kategori }} ingin dihapus?</p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                                        <form action="/Merk/{{ $item->id }}" method="POST">
+                                        <form action="/Kategori/{{ $item->id }}" method="POST">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn btn-primary">Hapus</button>

@@ -10,4 +10,8 @@ class Barang extends Model
     public function merks(){
         return $this->hasOne(Merk::class, "id","merks_id");
     }
+
+    public function kategoris(){
+        return $this->hasOne(Kategori::class, "id","kategoris_id");
+    }
 }
