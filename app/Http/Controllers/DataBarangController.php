@@ -73,7 +73,10 @@ class DataBarangController extends Controller
      */
     public function edit($id)
     {
-        //
+        $brg = Barang::find($id);
+        $Merk = Merk::all();
+        $Kategori = Kategori::all();
+        return view('DataBarang.edit', compact('brg', 'Merk', 'Kategori'));
     }
 
     /**
@@ -85,7 +88,17 @@ class DataBarangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $brg = Barang::find($id);
+
+        $brg->kode = $request->kode;
+        $brg->nm_barang = $request->nama_brg;
+        $brg->harga = $request->harga;
+        $brg->merks_id = $request->merk;
+        $brg->kategoris_id = $request->kategori;
+        $brg->foto = "default.jpg";
+        $brg->save();
+
+        return redirect('/DataBarang');
     }
 
     /**
@@ -96,6 +109,9 @@ class DataBarangController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $brg = Barang::find($id);
+        $brg->delete();
+
+        return redirect('/DataBarang');
     }
 }

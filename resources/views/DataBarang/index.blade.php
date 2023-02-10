@@ -59,7 +59,7 @@
                         <td>{{ $item->merks->nm_merk}}</td>
                         <td>{{ $item->kategoris->nm_kategori }}</td>
                         <td>
-                            <a href="/Merk/edit/{{$item->id}}" class="btn btn-sm btn-info">Edit</a>
+                            <a href="/DataBarang/edit/{{$item->id}}" class="btn btn-sm btn-info">Edit</a>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal{{ $item->id }}">
                                 Hapus
@@ -73,11 +73,11 @@
                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Peringatan</h1>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Yakin data merk {{ $item->nm_merk }} ingin dihapus?</p>
+                                        <p>Yakin data {{ $item->nm_barang }} ingin dihapus?</p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                                        <form action="/Merk/{{ $item->id }}" method="POST">
+                                        <form action="/DataBarang/{{ $item->id }}" method="POST">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn btn-primary">Hapus</button>
